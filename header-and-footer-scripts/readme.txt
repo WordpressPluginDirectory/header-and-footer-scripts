@@ -1,21 +1,27 @@
 === Header and Footer Scripts ===
 
-Contributors: anand_kumar, digitalliberation
+Contributors: anand_kumar, jamify
 Donate link: https://github.com/anandkumar/header-and-footer-scripts
-Tags: head, header, footer, scripts, admin
+Tags: head, header, footer, scripts, post
 Requires at least: 4.6
-Tested up to: 6.7.1
-Stable tag: 2.2.2
-Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 2.4.2
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Header and Footer Scripts plugin allows you to add scripts to WordPress site's <head> and just before closing <body> tag.
 
 == Description ==
-If you are running a WordPress site then sooner or later you need to insert some kind of code to your website. It is most likley a web analytics code like Google Analytics or may be social media script or some CSS stylesheet or may be Custom fonts. This plugin will do all the magic. Even if you want to insert those codes in a custom post type.
+An essential WordPress plugin to easily insert scripts and styles (like Google Analytics, CSS, etc.) into your website's header and footer.
 
-All you have to do is adding appropriate html code.
+Looking for a way to add Google Analytics, Facebook Pixel, or custom tracking code to your website's header or footer?
+
+Header and Footer Scripts is a simple yet powerful plugin that lets you inject code—such as Google Analytics, custom CSS, Facebook Pixel, and chat widgets—directly into your site's header (`<head>`) or footer.
+
+No bloat, no ads. This lightweight plugin simply does what it says: inserts code into your header and footer efficiently.
+
+All you have to do is add the appropriate HTML code.
 
 Don't forget to wrap your code with proper tags.
 
@@ -30,8 +36,9 @@ Or for CSS:
 	</style>
 
 = Why use this plugin: =
-* To insert CSS and JavaScript codes to `<head>` or before `</body>`.
-* To insert code to `<head>` of any single page or post.
+* Insert scripts globally into the header and footer of your entire website.
+* Supports all script types including HTML, JavaScript, and CSS.
+* Add specific scripts to the header of individual posts or pages.
 * To insert code to Custom Post Type [New Feature].
 
 The plugin should be compatible with WooCommerce.
@@ -39,10 +46,10 @@ The plugin should be compatible with WooCommerce.
 = What it does not offer =
 * You can't insert/execute PHP codes.
 
-Almost all WordPress theme do support this "Header and Footer Scripts" plugin. If the codes are not appearing in your site [ask for support] or look at your theme file if they have standard `wp_head` and `wp_footer` hooks.
+Almost all WordPress themes support this "Header and Footer Scripts" plugin. If the codes are not appearing in your site [ask for support] or look at your theme file if they have standard `wp_head` and `wp_footer` hooks.
 
 = Important Links =
-For furhter information you are welcomed to follow these links:
+For further information you are welcomed to follow these links:
 
 * **[Read Documentation][1]**
 * **[Get Support][2]**
@@ -57,7 +64,7 @@ There is nothing special about installation of this plugin. It is as simple as u
 
 Upload the plugin to `/wp-content/plugins` and activate. OR Search "Header and Footer Scripts" from `WP Dashbard --> Plugins --> Add New` then hit Install and then activate.
 
-Once the plugin is activated you will see "Header and Footer Scripts" menu item under setting of WordPress dashboard. Also a meta box on Post and Page edit page.
+Once the plugin is activated you will see "Header and Footer Scripts" menu item under settings of WordPress dashboard. Also a meta box on Post and Page edit page.
 
 == Screenshots ==
 1. Access this page from `Dashboard --> Settings --> Header and Footer Scripts`
@@ -75,10 +82,43 @@ A. Nope, There is none. If you need more feature send us feedback or feature req
 
 == Changelog ==
 
-= 2.2.2 =
+= 2.4.2 =
+* Fix: Resolved critical issue where scripts added to per-post meta box were not saving.
+* Fix: Corrected CodeMirror editor rendering (borders, height) and gutter visibility (line numbers) in meta box.
+* Improvement: Updated English copy throughout the plugin for better clarity and professionalism.
+* New: Added Hindi (hi_IN) translation.
+* New: Included language template (.pot) and translation files.
+
+= 2.4.1 =
+* New Feature: Added "Clean on Uninstall" option to allow users to remove all data upon deletion.
+* Fix: Resolved issue where sidebar was not loading on settings page due to deprecated constant.
+* Improvement: Enhanced WPCS compliance with comprehensive DocBlocks and formatting fixes.
+* Improvement: Added strict sanitization to settings authentication to resolve Plugin Check warnings.
+
+= 2.4.0 =
+* Internal: Refactored codebase to "Jamify HFS" naming standards (`jamify_hfs_` prefix) while maintaining full backward compatibility.
+* New Feature: Added support for wp_body_open hook to insert scripts immediately after body tag.
+* New Feature: Added Syntax Highlighting for script editors in settings page.
+* Improvement: Modernized permission system to use 'unfiltered_html' capability.
+* Improvement: Added settings to allow Authors and Contributors to add scripts.
+* Improvement: Added admin notice for backward compatibility migration.
+
+= 2.3.1 =
+* Security: Hardened nonce implementation with static action names.
+* Security: Added strict sanitization for access level settings.
+* Security: Improved input validation with isset() checks and wp_unslash().
+* Security: Replaced __FILE__ menu slug to prevent path exposure.
+* Security: Added security warning for privilege delegation.
+* New: Added uninstall.php for clean database removal.
+* Fix: Added proper ABSPATH checks to all files.
+* Improvement: Added phpcs:ignore comments for intentional raw output.
+
+= 2.3.0 =
+* Fix: Stored Cross-Site Scripting (XSS) vulnerability.
+* New Feature: Add minimum capability required to add scripts to posts.
+
+= 2.2.1 =
 * Updated readme.txt.
-* Compatibility checked upto WordPress 6.7.1
-* Now require PHP v7.4 at least.
 
 = 2.2.0 =
 * New feature: Now set priority to sitewide script.
